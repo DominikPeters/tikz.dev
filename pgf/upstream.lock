@@ -1,7 +1,7 @@
 # Upstream sources of this manual. "commit" is the last upstream commit that
 # built successfully; it is advanced automatically by .github/workflows/upstream.yml.
 repo=https://github.com/pgf-tikz/pgf.git
-commit=7092055d11aeeb13f23fce557f51ec339bd0bbe8
+commit=6f5321bcbfc116706eeb72e4cb6d921528612397
 # upstream paths whose changes trigger a rebuild
 watch=doc/generic/pgf tex/generic/pgf
 docdir=doc/generic/pgf
