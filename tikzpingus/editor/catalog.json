@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "bodies": [
+    {
+      "id": "normal",
+      "label": "Classic",
+      "tex": "normal"
+    },
+    {
+      "id": "chubby",
+      "label": "Chubby",
+      "tex": "chubby"
+    },
+    {
+      "id": "legacy",
+      "label": "Original",
+      "tex": "legacy"
+    }
+  ],
+  "eyes": [
+    {
+      "id": "normal",
+      "label": "Classic",
+      "tex": "normal"
+    },
+    {
+      "id": "shiny",
+      "label": "Shiny",
+      "tex": "shiny"
+    },
+    {
+      "id": "wink",
+      "label": "Wink",
+      "tex": "wink"
+    },
+    {
+      "id": "sad",
+      "label": "Sad",
+      "tex": "sad"
+    },
+    {
+      "id": "angry",
+      "label": "Angry",
+      "tex": "angry"
+    },
+    {
+      "id": "hearts",
+      "label": "Hearts",
+      "tex": "hearts"
+    },
+    {
+      "id": "shock",
+      "label": "Surprised",
+      "tex": "shock"
+    },
+    {
+      "id": "critical",
+      "label": "Skeptical",
+      "tex": "critical"
+    },
+    {
+      "id": "vertical",
+      "label": "Tall",
+      "tex": "vertical"
+    },
+    {
+      "id": "devil",
+      "label": "Mischievous",
+      "tex": "devil"
+    },
+    {
+      "id": "none",
+      "label": "None",
+      "tex": "none"
+    }
+  ],
+  "wings": [
+    {
+      "id": "normal",
+      "label": "Resting",
+      "tex": "normal"
+    },
+    {
+      "id": "wave",
+      "label": "Waving",
+      "tex": "wave"
+    },
+    {
+      "id": "raise",
+      "label": "Raised",
+      "tex": "raise"
+    },
+    {
+      "id": "grab",
+      "label": "Holding",
+      "tex": "grab"
+    },
+    {
+      "id": "shock",
+      "label": "Surprised",
+      "tex": "shock"
+    },
+    {
+      "id": "hug",
+      "label": "Hugging",
+      "tex": "hug"
+    },
+    {
+      "id": "none",
+      "label": "Hidden",
+      "tex": "none"
+    }
+  ],
+  "bills": [
+    {
+      "id": "normal",
+      "label": "Classic",
+      "tex": "normal"
+    },
+    {
+      "id": "flat",
+      "label": "Flat",
+      "tex": "flat"
+    },
+    {
+      "id": "open",
+      "label": "Open",
+      "tex": "open"
+    },
+    {
+      "id": "angry",
+      "label": "Grumpy",
+      "tex": "angry"
+    }
+  ],
+  "feet": [
+    {
+      "id": "normal",
+      "label": "Classic",
+      "tex": "normal"
+    },
+    {
+      "id": "sit",
+      "label": "Sitting",
+      "tex": "sit"
+    },
+    {
+      "id": "simple",
+      "label": "Simple",
+      "tex": "simple"
+    },
+    {
+      "id": "back",
+      "label": "Pointing back",
+      "tex": "back"
+    },
+    {
+      "id": "chubby",
+      "label": "Chubby",
+      "tex": "chubby"
+    },
+    {
+      "id": "none",
+      "label": "Hidden",
+      "tex": "none"
+    }
+  ],
+  "headwear": [
+    {
+      "id": "none",
+      "label": "None",
+      "tex": ""
+    },
+    {
+      "id": "hat",
+      "label": "Bowler",
+      "tex": "hat"
+    },
+    {
+      "id": "strawhat",
+      "label": "Straw hat",
+      "tex": "straw hat"
+    },
+    {
+      "id": "graduate",
+      "label": "Graduate",
+      "tex": "graduate cap"
+    },
+    {
+      "id": "crown",
+      "label": "Crown",
+      "tex": "crown"
+    },
+    {
+      "id": "princesscrown",
+      "label": "Tiara",
+      "tex": "princess crown"
+    },
+    {
+      "id": "constructionhelmet",
+      "label": "Hard hat",
+      "tex": "construction helmet"
+    },
+    {
+      "id": "santahat",
+      "label": "Santa hat",
+      "tex": "santa hat",
+      "hideHair": true
+    },
+    {
+      "id": "woolhat",
+      "label": "Beanie",
+      "tex": "wool hat",
+      "hideHair": true
+    },
+    {
+      "id": "pumpkinhat",
+      "label": "Pumpkin",
+      "tex": "pumpkin-hat"
+    },
+    {
+      "id": "bunnyears",
+      "label": "Bunny ears",
+      "tex": "bunny ears"
+    },
+    {
+      "id": "devilhorns",
+      "label": "Devil horns",
+      "tex": "devil horns"
+    },
+    {
+      "id": "headphone",
+      "label": "Headphones",
+      "tex": "headphones"
+    }
+  ],
+  "eyewear": [
+    {
+      "id": "none",
+      "label": "None",
+      "tex": ""
+    },
+    {
+      "id": "glasses",
+      "label": "Glasses",
+      "tex": "glasses"
+    },
+    {
+      "id": "glassesround",
+      "label": "Round glasses",
+      "tex": "glasses round"
+    },
+    {
+      "id": "sunglasses",
+      "label": "Sunglasses",
+      "tex": "sun glasses"
+    },
+    {
+      "id": "monocleleft",
+      "label": "Monocle",
+      "tex": "monocle left"
+    },
+    {
+      "id": "eyepatchleft",
+      "label": "Eye patch",
+      "tex": "eye patch left"
+    }
+  ],
+  "neckwear": [
+    {
+      "id": "none",
+      "label": "None",
+      "tex": ""
+    },
+    {
+      "id": "tie",
+      "label": "Tie",
+      "tex": "tie"
+    },
+    {
+      "id": "bowtie",
+      "label": "Bow tie",
+      "tex": "bow tie"
+    },
+    {
+      "id": "scarf",
+      "label": "Scarf",
+      "tex": "scarf"
+    }
+  ],
+  "belly": [
+    {
+      "id": "none",
+      "label": "None",
+      "tex": ""
+    },
+    {
+      "id": "cup",
+      "label": "Cup",
+      "tex": "cup"
+    },
+    {
+      "id": "heart",
+      "label": "Heart",
+      "tex": "heart"
+    }
+  ],
+  "items": [
+    {
+      "id": "none",
+      "label": "Nothing",
+      "tex": ""
+    },
+    {
+      "id": "flower",
+      "label": "Flower",
+      "tex": "flower"
+    },
+    {
+      "id": "lollipop",
+      "label": "Lollipop",
+      "tex": "lollipop"
+    },
+    {
+      "id": "snowball",
+      "label": "Snowball",
+      "tex": "snowball"
+    },
+    {
+      "id": "staff",
+      "label": "Staff",
+      "tex": "staff"
+    },
+    {
+      "id": "microphone",
+      "label": "Microphone",
+      "tex": "microphone"
+    },
+    {
+      "id": "guitar",
+      "label": "Guitar",
+      "tex": "guitar"
+    },
+    {
+      "id": "laptop",
+      "label": "Laptop",
+      "tex": "laptop"
+    }
+  ],
+  "colors": [
+    {
+      "id": "body",
+      "label": "Body, wings & hair",
+      "default": "#030e1d",
+      "tex": "body"
+    },
+    {
+      "id": "belly",
+      "label": "Belly",
+      "default": "#f8f8f8",
+      "tex": "body front"
+    },
+    {
+      "id": "eyes",
+      "label": "Eyes",
+      "default": "#171313",
+      "tex": "eyes color"
+    },
+    {
+      "id": "bill",
+      "label": "Bill",
+      "default": "#fcbb15",
+      "tex": "bill color"
+    },
+    {
+      "id": "feet",
+      "label": "Feet",
+      "default": "#fcbb15",
+      "tex": "feet color"
+    }
+  ],
+  "presets": [
+    {
+      "id": "classic",
+      "label": "Classic",
+      "state": {
+        "eyes": "normal"
+      }
+    },
+    {
+      "id": "hello",
+      "label": "Hello!",
+      "state": {
+        "eyes": "shiny",
+        "leftWing": "wave",
+        "headwear": "hat"
+      }
+    },
+    {
+      "id": "cosy",
+      "label": "Cosy",
+      "state": {
+        "eyes": "wink",
+        "neckwear": "scarf",
+        "headwear": "woolhat",
+        "belly": "cup",
+        "leftWing": "grab",
+        "rightWing": "grab"
+      }
+    },
+    {
+      "id": "graduate",
+      "label": "Graduate",
+      "state": {
+        "eyes": "shiny",
+        "headwear": "graduate",
+        "neckwear": "bowtie",
+        "leftWing": "raise"
+      }
+    },
+    {
+      "id": "royal",
+      "label": "Royal",
+      "state": {
+        "body": "chubby",
+        "eyes": "critical",
+        "headwear": "crown",
+        "rightWing": "wave"
+      }
+    },
+    {
+      "id": "musician",
+      "label": "Musician",
+      "state": {
+        "eyes": "shiny",
+        "headwear": "headphone",
+        "clothing": "shirt",
+        "leftItem": "guitar",
+        "rightItem": "microphone"
+      }
+    },
+    {
+      "id": "work",
+      "label": "At work",
+      "state": {
+        "eyes": "normal",
+        "clothing": "sweater",
+        "leftItem": "laptop"
+      }
+    }
+  ],
+  "clothing": [
+    {
+      "id": "none",
+      "label": "None",
+      "tex": ""
+    },
+    {
+      "id": "shirt",
+      "label": "Buttoned shirt",
+      "tex": "shirt"
+    },
+    {
+      "id": "sweater",
+      "label": "Sweater",
+      "tex": "second shirt"
+    },
+    {
+      "id": "cape",
+      "label": "Cape",
+      "tex": "cape"
+    }
+  ]
+}

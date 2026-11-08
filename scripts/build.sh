@@ -24,7 +24,7 @@ if [[ -n $native_key ]] && python3 "$root/scripts/native_cache.py" restore "$pkg
   fi
 else
   case $pkg in
-    tcolorbox|tkz-euclide|chemfig|forest|nicematrix)
+    tcolorbox|tkz-euclide|chemfig|forest|nicematrix|tikzpingus)
       # converted without lwarp (docs/converters.md), reads the upstream checkout directly
       UPSTREAM="$root/.upstream/$pkg" "$root/$pkg/build.sh"
       site="$root/$pkg/build/site/$pkg"

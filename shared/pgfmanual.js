@@ -23,6 +23,7 @@ const SEARCH_MANUALS = {
   chemfig: ["chemfig", "chemfig"],
   forest: ["forest", "forest"],
   nicematrix: ["nicematrix", "nicematrix"],
+  tikzpingus: ["tikzpingus", "TikZpingus"],
 };
 const SEARCH_SCOPE_KEY = "tikzdev-search-scope";
 // "package": only the manual of this page; "all": all manuals on tikz.dev

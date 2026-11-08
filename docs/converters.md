@@ -1,7 +1,7 @@
 # Manuals converted without lwarp
 
 Manuals that are not written with PGF's documentation macros (tcolorbox,
-tkz-euclide, chemfig, forest, nicematrix) are converted by a Python converter instead of
+tkz-euclide, chemfig, forest, nicematrix, TikZpingus) are converted by a Python converter instead of
 lwarp. Such a manual is built from a small set of its own documentation macros
 (an example environment, an entry for each command or key, ...), so parsing
 its sources directly and mapping these macros onto the tikz.dev HTML structure

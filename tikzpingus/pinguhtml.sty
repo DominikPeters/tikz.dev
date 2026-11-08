@@ -1,0 +1,56 @@
+% Hooks for the TikZpingus manual's examples and computed defaults.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pinguhtml}[2026/11/08 TikZpingus HTML image capture]
+\RequirePackage{tikzdev-capture}
+
+% Execute every example in document order, without external TeX jobs. Listings
+% and implementation excerpts are rendered as real text by the HTML converter.
+\tcbset{externalize listing/.code={},externalize listing!/.code={}}
+\let\pinguhtml@input\tcbuselistingtext@input
+\def\tcbuselistingtext@input{%
+  \HTMLexamplebegin\pinguhtml@input\HTMLexampleend}
+% The reference scales its lower pane in an adjustbox (horizontal mode), so
+% return the captured vbox as a box rather than unboxing it vertically.
+\def\HTMLexampleend{%
+  \par\color@endgroup\egroup
+  \ifx\tdcap@cur\@empty\else\tdcap@ship{\tdcap@cur}\fi
+  \box\tdcap@box}
+\def\tcb@listing@input@listing#1#2{}
+\RenewDocumentCommand\sourcecode{O{}m}{}
+\RenewDocumentCommand\SourceMap{}{}
+\providecommand\pdfrandomseed{12345}
+\colorlet{@primcolor}{pingu@purple!70!black}
+% colorinfo's model probing is incompatible with the LuaLaTeX color setup.
+% xcolor can obtain the same RGB triples directly.
+\renewcommand\colorInfoRGB[1]{\convertcolorspec{named}{#1}{rgb}\colorValue}
+
+% Let TeX resolve lengths, conditionals and defaults read from the package
+% source. The converter reads these expanded forms instead of reimplementing
+% TeX's calculations or baking the current version's values into Python.
+\newwrite\pinguhtml@values
+\immediate\openout\pinguhtml@values=\jobname.htmlvalues
+\long\def\HTMLvalue#1#2{%
+  \begingroup
+  \protected@edef\pinguhtml@value{#2}%
+  \immediate\write\pinguhtml@values{#1 \expandafter\detokenize\expandafter{\pinguhtml@value}}%
+  \endgroup}
+\long\def\HTMLkeyvalue#1#2#3#4{%
+  \begingroup
+  \pingu@setparent{#2}%
+  \pingu@keydefault{#3}{#4}%
+  \pingu@expands{#4}%
+  \HTMLvalue{#1}{\@kdef}%
+  \pingu@setparent{}%
+  \endgroup}
+\ExplSyntaxOn
+\cs_new_protected:Npn \pinguhtml_log_colors:
+  {
+    \prop_map_inline:Nn \g__pingu_colorkey_prop
+      { \iow_now:Nx \pinguhtml@values { colorkey:##1\c_space_tl##2 } }
+  }
+\AtBeginDocument{\pinguhtml_log_colors:}
+\ExplSyntaxOff
+\newcommand\HTMLgadget[2]{\tikz{\pingu[:mix=30!white,#1#2]}}
+\newcommand\HTMLselection[2]{\tikz{\pingu[:mix=30!white,#1=#2]}}
+\newenvironment{HTMLgallery}{\par}{\par}
+\endinput

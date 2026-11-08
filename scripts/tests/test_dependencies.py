@@ -6,7 +6,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'scripts'))
 from dependencies import affected, packages
 
-CONVERTED = {'chemfig', 'forest', 'nicematrix', 'tcolorbox', 'tkz-euclide'}
+CONVERTED = {'chemfig', 'forest', 'nicematrix', 'tcolorbox', 'tkz-euclide', 'tikzpingus'}
 CONTRIBUTED = {'pgf-pie', 'pgfgantt', 'tikz-cd', 'tikz-feynman', 'wheelchart'}
 
 

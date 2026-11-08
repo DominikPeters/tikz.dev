@@ -52,6 +52,12 @@ precedence = "override"
 SPDX-FileCopyrightText = "2024 Wolfgang Esser-Skala; changes 2026 Dominik Peters"
 SPDX-License-Identifier = "LPPL-1.3c+"
 
+[[annotations]]
+path = "tikzpingus/pinguhtml.sty"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Florian Sihler; changes 2026 Dominik Peters"
+SPDX-License-Identifier = "LPPL-1.3c+"
+
 # pgf-pie documentation: LPPL 1.3c or GPL 2
 [[annotations]]
 path = "pgf-pie/patches/**"

@@ -1,0 +1,255 @@
+/* TikZpingus start page: shared manual shell, compact package title. */
+.pkg-tikzpingus .pingu-title-block{padding:.65em 1em .55em;margin:.75rem 0 0;}
+.pkg-tikzpingus .pingu-title-block .manual-title{font-size:2em;line-height:1.15;}
+.pkg-tikzpingus .pingu-title-block .manual-version{font-size:1em;margin:.3em 0;}
+.pkg-tikzpingus .pingu-title-block .manual-html-explanation{font-size:.82em;margin:0;max-width:none;}
+
+/* The editor borrows the manual's own vocabulary: pictures sit on the example
+   yellow, code on the example lavender, framed like the Contents cards. */
+#pingu-editor{
+  --ink:#111;--muted:#5f5f5f;--line:#d9d6cf;--soft-line:#e8e4dc;--paper:#faf7f4;
+  --accent:var(--pkg-color,#246182);--accent-dark:#194b66;--pale:#e8f0f5;
+  --picture:rgb(245,245,204);--code:#e5e5ff;--code-ink:#45457a;--love:#c93d63;
+  --radius:3px;--spring:cubic-bezier(.34,1.56,.64,1);
+  font-family:var(--main-font);font-size:14px;line-height:1.4;color:var(--ink);margin:0 0 .5rem;
+}
+#pingu-editor,#pingu-editor *{box-sizing:border-box;}
+#pingu-editor a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+#pingu-editor button,#pingu-editor input,#pingu-editor select{font:inherit;}
+#pingu-editor button{cursor:pointer;color:inherit;}
+#pingu-editor button:disabled{cursor:default;opacity:.45;}
+#pingu-editor :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+#pingu-editor [hidden]{display:none!important;}
+#pingu-editor img{border:0;box-shadow:none;padding:0;background:transparent;}
+#pingu-editor h2,#pingu-editor h3{padding:0;border:0;}
+
+/* Intro, styled like the page's other section headings */
+#pingu-editor .editor-intro{display:flex;align-items:baseline;flex-wrap:wrap;gap:.2em 1em;margin:1.1em 0 .6em;}
+#pingu-editor .editor-intro h2{margin:0;}
+#pingu-editor .editor-intro p{margin:0;color:var(--muted);font-size:14px;}
+
+/* Frame */
+#pingu-editor .editor-frame{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);overflow:hidden;}
+#pingu-editor .workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;}
+#pingu-editor .drawing-column{min-width:0;display:flex;flex-direction:column;}
+/* The controls column takes the height of the picture column and scrolls inside it. */
+#pingu-editor .controls-card{border-left:1px solid var(--line);display:flex;flex-direction:column;height:0;min-height:100%;}
+
+/* Buttons */
+#pingu-editor .quiet,#pingu-editor .secondary,#pingu-editor .primary{height:32px;border-radius:var(--radius);padding:0 11px;font-weight:600;font-size:13px;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .15s,border-color .15s,color .15s,transform .15s var(--spring);}
+#pingu-editor .quiet{background:transparent;border:1px solid transparent;}
+#pingu-editor .quiet:hover:not(:disabled){background:#0000000b;}
+#pingu-editor .secondary{background:#fff;border:1px solid var(--line);}
+#pingu-editor .secondary:hover:not(:disabled){border-color:#b9b4aa;}
+#pingu-editor .primary{background:var(--accent);border:1px solid var(--accent);color:#fff;}
+#pingu-editor .primary:hover:not(:disabled){background:var(--accent-dark);border-color:var(--accent-dark);}
+#pingu-editor .primary:active:not(:disabled),#pingu-editor .secondary:active:not(:disabled),#pingu-editor .quiet:active:not(:disabled){transform:translateY(1px);}
+#pingu-editor .quiet svg,#pingu-editor .secondary svg,#pingu-editor .icon-button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+#pingu-editor .small{height:28px;padding:0 10px;font-size:12px;}
+#pingu-editor .done{background:var(--pale)!important;color:var(--accent)!important;}
+
+/* Toolbar */
+#pingu-editor .editor-toolbar{display:flex;align-items:center;gap:6px 4px;flex-wrap:wrap;padding:7px 8px;border-bottom:1px solid var(--line);background:var(--paper);}
+#pingu-editor .heading-actions,#pingu-editor .stage-actions,#pingu-editor .download-actions{display:flex;align-items:center;gap:4px;}
+#pingu-editor .stage-actions{margin-left:auto;padding-right:8px;margin-right:4px;border-right:1px solid var(--line);}
+#pingu-editor .history{display:flex;}
+#pingu-editor .icon-button{width:32px;height:32px;display:grid;place-items:center;border:0;background:none;border-radius:var(--radius);color:var(--ink);transition:background .15s,color .15s;}
+#pingu-editor .icon-button:hover:not(:disabled){background:#0000000b;}
+#pingu-editor .icon-button:disabled{opacity:.3;}
+#pingu-editor .dice{display:inline-block;font-size:15px;line-height:1;transition:transform .4s var(--spring);}
+#pingu-editor #shuffle:hover:not(:disabled) .dice{transform:rotate(-25deg) scale(1.12);}
+#pingu-editor .download-short{display:none;}
+#pingu-editor .favorite-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;transition:transform .3s var(--spring),fill .15s;}
+#pingu-editor .favorite-toggle:hover:not(:disabled){color:var(--love);}
+#pingu-editor .favorite-toggle:hover svg{transform:scale(1.15);}
+#pingu-editor .favorite-toggle[aria-pressed=true]{color:var(--love);background:#fbe9ee;}
+#pingu-editor .favorite-toggle[aria-pressed=true] svg{fill:currentColor;animation:pingu-beat .45s var(--spring);}
+@keyframes pingu-beat{0%{transform:scale(.6)}50%{transform:scale(1.3)}}
+
+/* Stage */
+#pingu-editor .stage-card{background:var(--picture);}
+#pingu-editor .stage{height:330px;position:relative;overflow:hidden;}
+#pingu-editor .preview{position:relative;height:100%;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+#pingu-editor .preview>svg{grid-area:1/1;width:84%;height:300px;overflow:visible;}
+#pingu-editor .preview>svg.leaving{pointer-events:none;}
+#pingu-editor .ground{fill:#5c5a1e;opacity:.12;}
+#pingu-editor .pingu [data-drawing]{transform-box:fill-box;transform-origin:50% 100%;animation:pingu-breathe 4s ease-in-out infinite;}
+@keyframes pingu-breathe{0%,100%{transform:none}50%{transform:scale(1.012,.988)}}
+#pingu-editor .blinks [data-part$=eye]{transform-box:fill-box;transform-origin:center;animation:pingu-blink 5.5s infinite;}
+@keyframes pingu-blink{0%,95%,100%{transform:none}97%{transform:scaleY(.1)}}
+/* Click reactions move the drawing, not its shadow. Units are drawing units. */
+#pingu-editor .boop-hop [data-drawing]{animation:pingu-boop-hop .6s var(--spring);}
+@keyframes pingu-boop-hop{0%{transform:none}20%{transform:scale(1.08,.88)}45%{transform:translateY(-9px) rotate(-6deg) scale(.95,1.06)}70%{transform:translateY(0) rotate(3deg)}85%{transform:scale(1.03,.97)}100%{transform:none}}
+#pingu-editor .boop-wiggle [data-drawing]{animation:pingu-boop-wiggle .7s ease-in-out;}
+@keyframes pingu-boop-wiggle{0%,100%{transform:none}15%{transform:rotate(-7deg)}30%{transform:rotate(6deg)}45%{transform:rotate(-5deg)}60%{transform:rotate(3.5deg)}75%{transform:rotate(-1.5deg)}}
+#pingu-editor .boop-spin [data-drawing]{transform-origin:50% 55%;animation:pingu-boop-spin .8s cubic-bezier(.45,0,.3,1);}
+@keyframes pingu-boop-spin{0%{transform:none}15%{transform:scale(1.07,.9)}55%{transform:translateY(-7px) rotate(200deg) scale(.95)}85%{transform:translateY(0) rotate(360deg) scale(1.04,.96)}100%{transform:rotate(360deg)}}
+#pingu-editor .boop-love [data-drawing]{animation:pingu-boop-love .7s var(--spring);}
+@keyframes pingu-boop-love{0%{transform:none}25%{transform:scale(1.1,.9)}50%{transform:scale(.95,1.07)}75%{transform:scale(1.03,.98)}100%{transform:none}}
+#pingu-editor .boop-hop .ground,#pingu-editor .boop-spin .ground,#pingu-editor .a-morph .ground{animation:pingu-shadow .6s ease;}
+#pingu-editor .boop-hop .ground{transform-box:fill-box;transform-origin:center;}
+@keyframes pingu-shadow{50%{opacity:.05}}
+/* Change entrances, chosen by what changed */
+#pingu-editor .pingu [data-part][class*=a-]{transform-box:fill-box;}
+#pingu-editor .pingu [data-part].a-drop{animation:pingu-drop .55s cubic-bezier(.3,1.4,.5,1);}
+@keyframes pingu-drop{0%{transform:translateY(-22px);opacity:0}35%{opacity:1}}
+#pingu-editor .pingu [data-part].a-slide{animation:pingu-slide .4s cubic-bezier(.2,1.2,.4,1);}
+@keyframes pingu-slide{0%{transform:translateY(-7px);opacity:0}}
+#pingu-editor .pingu [data-part].a-pop{transform-origin:center;animation:pingu-pop-in .45s var(--spring);}
+@keyframes pingu-pop-in{0%{transform:scale(.2);opacity:0}40%{opacity:1}}
+#pingu-editor .pingu [data-part].a-blink{transform-origin:center;animation:pingu-open .28s ease-out;}
+@keyframes pingu-open{0%{transform:scaleY(.08)}}
+#pingu-editor .pingu [data-part].a-fade{animation:pingu-fade-in .26s ease-out;}
+@keyframes pingu-fade-in{from{opacity:0}}
+#pingu-editor .pingu [data-part].a-tap{animation:pingu-tap .4s ease-out;}
+@keyframes pingu-tap{0%{transform:translateY(-5px)}45%{transform:none}70%{transform:translateY(-1.5px)}}
+#pingu-editor .pingu [data-part].a-sprout{transform-origin:50% 100%;animation:pingu-sprout .45s var(--spring);}
+@keyframes pingu-sprout{0%{transform:scale(.1,.1)}}
+#pingu-editor .a-morph{animation:pingu-morph .55s var(--spring);}
+@keyframes pingu-morph{0%{transform:scale(.93,1.06)}45%{transform:scale(1.03,.97)}}
+#pingu-editor .loading{color:var(--muted);font-size:13px;padding:20px;display:flex;gap:8px;align-items:center;}
+
+/* Presets sit on the picture, like captions under an example */
+#pingu-editor .presets{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:2px 10px 14px;}
+#pingu-editor .preset{height:30px;font-size:12px;padding:0 10px 0 7px;border-radius:15px;border:1px solid transparent;background:#ffffffb8;color:var(--ink);display:inline-flex;gap:6px;align-items:center;transition:transform .2s var(--spring),border-color .15s,background .15s;}
+#pingu-editor .preset span{font-size:14px;line-height:1;}
+#pingu-editor .preset:hover{transform:translateY(-2px);background:#fff;}
+#pingu-editor .preset[aria-pressed=true]{background:#fff;border-color:var(--accent);color:var(--accent);font-weight:600;}
+
+/* Favorites: a shelf at the foot of the picture */
+#pingu-editor .favorites{display:flex;align-items:center;gap:12px;padding:0 0 0 14px;background:#ecebbe;border-top:1px solid #dddba6;}
+#pingu-editor .favorites h3{flex:none;font-size:12px;font-weight:600;color:#6a6830;margin:0;display:flex;align-items:center;gap:6px;}
+#pingu-editor .favorites h3:before{content:"♥";color:var(--love);font-size:13px;}
+#pingu-editor .favorites h3 span{min-width:18px;padding:0 5px;border-radius:9px;background:#fff9;color:#6a6830;text-align:center;font-size:11px;line-height:18px;}
+#pingu-editor .favorite-list{flex:1;min-width:0;list-style:none;margin:0;padding:10px 14px 9px 2px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;}
+#pingu-editor .favorite{position:relative;flex:none;margin:0;}
+#pingu-editor .favorite.fresh{animation:pingu-pop-in .5s var(--spring);}
+#pingu-editor .favorite-open{width:46px;height:52px;padding:3px;border-radius:var(--radius);border:1px solid #0000;background:#fff;display:block;box-shadow:0 1px 0 #0000001a;transition:transform .2s var(--spring),box-shadow .15s;}
+#pingu-editor .favorite-open:hover{transform:translateY(-2px);box-shadow:0 3px 6px #0000001f;}
+#pingu-editor .favorite.current .favorite-open{border-color:var(--love);box-shadow:0 0 0 1px var(--love);}
+#pingu-editor .favorite-open svg{width:100%;height:100%;display:block;pointer-events:none;}
+#pingu-editor .favorite-remove{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;border:0;background:#4a4a3a;color:#fff;font-size:12px;line-height:1;display:grid;place-items:center;padding:0;opacity:0;transform:scale(.6);transition:opacity .15s,transform .2s var(--spring);}
+#pingu-editor .favorite:hover .favorite-remove,#pingu-editor .favorite-remove:focus-visible{opacity:1;transform:none;}
+#pingu-editor .favorite-remove:hover{background:#b33c3c;}
+@media(hover:none){#pingu-editor .favorite-remove{opacity:1;transform:none;}}
+
+/* Code, on the manual's example lavender */
+#pingu-editor .code-card{margin-top:auto;border-top:1px solid var(--line);background:var(--code);}
+#pingu-editor .code-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 0 14px;}
+#pingu-editor .code-toolbar h3{font-size:12px;font-weight:600;color:var(--code-ink);margin:0;}
+#pingu-editor .code-toolbar>div{display:flex;align-items:center;gap:4px;}
+#pingu-editor .document-toggle{font-size:12px;color:var(--code-ink);display:flex;align-items:center;gap:6px;cursor:pointer;padding:0 6px;}
+#pingu-editor .code-toolbar button{height:28px;font-size:12px;background:#bbbbfc8a;color:#1d1d4f;}
+#pingu-editor .code-toolbar button:hover:not(:disabled){background:#c0c0ff;}
+#pingu-editor .code-card pre{padding:8px 14px 14px;margin:0;max-height:200px;overflow:auto;background:none;border:0;color:var(--ink);font-size:13px;line-height:1.5;tab-size:2;}
+#pingu-editor .code-card code{font-family:var(--monospace-font);}
+#pingu-editor .tok-cmd{color:#1d4f8f;font-weight:600;}
+#pingu-editor .tok-key{color:#24586f;}
+#pingu-editor .tok-value{color:#97440f;}
+#pingu-editor .tok-punct{color:#6f6f96;}
+#pingu-editor .tok-comment{color:#9a9ac4;}
+#pingu-editor .code-card a.code-doc{color:inherit;text-decoration:underline dotted #8a8ab4;text-underline-offset:3px;}
+#pingu-editor .code-card a.code-doc:hover{background:#ffffffb0;text-decoration-style:solid;}
+
+/* Switch: a plain checkbox in the accent color */
+#pingu-editor .switch{margin:0;accent-color:var(--accent);cursor:pointer;}
+#pingu-editor .switch-row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;padding:9px 12px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;cursor:pointer;transition:border-color .15s;}
+#pingu-editor .switch-row:hover{border-color:#b9b4aa;}
+
+/* Controls */
+#pingu-editor .tabs{display:flex;flex:none;border-bottom:1px solid var(--line);padding:0 6px;}
+#pingu-editor .tabs button{flex:1;padding:12px 2px 10px;background:none;border:0;font-size:13px;color:var(--muted);font-weight:600;position:relative;transition:color .15s;}
+#pingu-editor .tabs button:hover{color:var(--ink);}
+#pingu-editor .tabs button:after{content:"";position:absolute;left:14%;right:14%;bottom:-1px;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s var(--spring);}
+#pingu-editor .tabs button[aria-selected=true]{color:var(--accent);}
+#pingu-editor .tabs button[aria-selected=true]:after{transform:scaleX(1);}
+#pingu-editor .panels{flex:1;min-height:0;padding:14px;overflow-y:auto;scrollbar-width:thin;}
+#pingu-editor [role=tabpanel]{animation:pingu-panel .25s ease;}
+#pingu-editor [role=tabpanel]:focus-visible{outline-offset:-3px;}
+@keyframes pingu-panel{from{opacity:0;transform:translateY(4px)}}
+#pingu-editor .control-group{margin:0 0 20px;border:0;padding:0;min-width:0;}
+#pingu-editor .control-group:last-child{margin-bottom:0;}
+#pingu-editor .control-group legend{font-size:13px;font-weight:600;margin:0 0 8px;padding:0;display:flex;align-items:center;width:100%;}
+#pingu-editor .control-group legend small{color:var(--muted);font-weight:400;font-size:12px;margin-left:auto;}
+#pingu-editor .doc-info{display:inline-flex;align-items:center;justify-content:center;width:24px;height:22px;flex:none;margin-left:auto;margin-right:-4px;border-radius:var(--radius);color:#8a867e;text-decoration:none;transition:color .15s,background .15s;}
+#pingu-editor small+.doc-info{margin-left:4px;}
+#pingu-editor .doc-info svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;}
+#pingu-editor .doc-info:hover{background:var(--pale);color:var(--accent);}
+#pingu-editor .choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#pingu-editor .choices.cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+#pingu-editor .choice{background:#fff;border:1px solid var(--soft-line);border-radius:var(--radius);min-width:0;padding:5px 3px 6px;display:flex;flex-direction:column;align-items:center;position:relative;transition:transform .2s var(--spring),border-color .15s,background .15s;}
+#pingu-editor .choice:hover{transform:translateY(-2px);border-color:#b9b4aa;}
+#pingu-editor .choice[aria-pressed=true]{border-color:var(--accent);background:var(--pale);box-shadow:inset 0 0 0 1px var(--accent);}
+#pingu-editor .choice[aria-pressed=true]:after{content:"✓";position:absolute;right:4px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--accent);color:#fff;font-size:9px;font-weight:800;display:grid;place-items:center;animation:pingu-pop .3s var(--spring);}
+@keyframes pingu-pop{from{transform:scale(0)}}
+#pingu-editor .choice.picked .thumbnail{animation:pingu-picked .45s var(--spring);}
+@keyframes pingu-picked{30%{transform:scale(.88)}70%{transform:scale(1.08)}}
+#pingu-editor .thumbnail{display:block;width:100%;pointer-events:none;}
+#pingu-editor .choice svg,#pingu-editor .choice img{display:block;width:100%;height:58px;margin-bottom:3px;object-fit:contain;transition:transform .2s var(--spring);}
+#pingu-editor .choice:hover svg,#pingu-editor .choice:hover img{transform:scale(1.06);}
+#pingu-editor .cols-4 .choice svg{height:50px;}
+#pingu-editor .choice-label{font-size:11px;line-height:1.25;color:#333;pointer-events:none;text-align:center;overflow-wrap:anywhere;}
+#pingu-editor .choice[aria-pressed=true] .choice-label{color:var(--accent);font-weight:600;}
+
+/* Colors */
+#pingu-editor .palette-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#pingu-editor .palette{border:1px solid var(--soft-line);border-radius:var(--radius);background:#fff;padding:9px 6px 7px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;transition:transform .2s var(--spring),border-color .15s;}
+#pingu-editor .palette:hover{transform:translateY(-2px);border-color:#b9b4aa;}
+#pingu-editor .palette[aria-pressed=true]{border-color:var(--accent);background:var(--pale);box-shadow:inset 0 0 0 1px var(--accent);color:var(--accent);font-weight:600;}
+#pingu-editor .swatch{display:flex;}
+#pingu-editor .swatch i{display:block;width:18px;height:18px;border-radius:50%;border:2px solid #fff;margin-left:-5px;}
+#pingu-editor .swatch i:first-child{margin-left:0;}
+#pingu-editor .color-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:10px;}
+#pingu-editor .color-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border-bottom:1px solid var(--soft-line);}
+#pingu-editor .color-row:last-child{border-bottom:0;}
+#pingu-editor .color-row label{font-size:13px;flex:1;cursor:pointer;}
+#pingu-editor .color-row input[type=color]{width:28px;height:28px;flex:none;padding:0;border-radius:var(--radius);border:0;background:transparent;cursor:pointer;overflow:hidden;transition:transform .2s var(--spring);}
+#pingu-editor .color-row input[type=color]:hover{transform:scale(1.12);}
+#pingu-editor .color-row input[type=color]::-webkit-color-swatch-wrapper{padding:0;}
+#pingu-editor .color-row input[type=color]::-webkit-color-swatch{border:1px solid #0002;border-radius:var(--radius);}
+#pingu-editor .color-row input[type=color]::-moz-color-swatch{border:1px solid #0002;border-radius:var(--radius);}
+#pingu-editor .color-row input[type=text]{width:80px;border:1px solid var(--line);border-radius:var(--radius);font:12px var(--monospace-font);padding:6px;text-align:center;background:#fff;color:var(--ink);}
+#pingu-editor .color-row input[aria-invalid=true]{border-color:#b33c3c;background:#fdf3f2;}
+
+/* Messages */
+#pingu-editor .error{padding:20px;color:#9c3830;font-size:13px;line-height:1.7;}
+#pingu-editor .confetti{position:fixed;z-index:30;width:7px;height:9px;pointer-events:none;}
+#pingu-editor .confetti.heart{width:auto;height:auto;font-size:15px;line-height:1;font-style:normal;}
+#pingu-editor #notice{position:fixed;left:50%;bottom:28px;z-index:20;background:var(--ink);color:#fff;max-width:calc(100vw - 32px);padding:10px 16px 10px 10px;border-radius:var(--radius);font-size:13px;pointer-events:none;display:flex;align-items:center;gap:10px;transform:translate(-50%,20px);opacity:0;}
+#pingu-editor #notice:empty{display:none;}
+#pingu-editor #notice.show{animation:pingu-toast .35s var(--spring) forwards;}
+@keyframes pingu-toast{to{transform:translate(-50%,0);opacity:1}}
+#pingu-editor .toast-icon{width:22px;height:22px;border-radius:50%;background:#ffffff26;display:grid;place-items:center;font-size:12px;}
+
+/* Narrower: stack the picture, the controls and the code. */
+@media(max-width:1000px){
+  #pingu-editor .workspace{display:flex;flex-direction:column;}
+  #pingu-editor .drawing-column{display:contents;}
+  #pingu-editor .stage-card{order:0;}
+  #pingu-editor .favorites{order:1;}
+  #pingu-editor .controls-card{order:2;height:auto;min-height:0;border-left:0;border-top:1px solid var(--line);}
+  #pingu-editor .panels{max-height:460px;}
+  #pingu-editor .code-card{order:3;}
+}
+@media(max-width:600px){
+  .pkg-tikzpingus .pingu-title-block .manual-title{font-size:1.65em;}
+  #pingu-editor .editor-toolbar{padding:6px;}
+  #pingu-editor .stage-actions{padding-right:0;margin-right:0;border-right:0;}
+  #pingu-editor .share-label{display:none;}
+  #pingu-editor .download-actions{flex:1 0 100%;}
+  #pingu-editor .download-actions button{flex:1;}
+  #pingu-editor .quiet,#pingu-editor .secondary,#pingu-editor .primary{padding:0 8px;}
+  #pingu-editor .stage{height:250px;}
+  #pingu-editor .preview>svg{height:226px;}
+  #pingu-editor .presets{padding:0 8px 12px;gap:5px;}
+  #pingu-editor .preset{height:28px;font-size:11.5px;padding:0 9px 0 7px;}
+  #pingu-editor .panels{padding:12px;}
+  #pingu-editor .document-toggle{font-size:11.5px;}
+}
+@media(max-width:400px){
+  #pingu-editor .favorite-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+}
+@media(prefers-reduced-motion:reduce){
+  #pingu-editor *,#pingu-editor *:before,#pingu-editor *:after{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
+  #pingu-editor #notice.show{opacity:1;transform:translate(-50%,0);}
+}

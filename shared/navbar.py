@@ -23,6 +23,7 @@ PACKAGES = [
     ("tcolorbox", "tcolorbox", "tcolorbox/"),
     ("tikz-cd", "tikz-cd", "tikz-cd/"),
     ("tikz-feynman", "TikZ-Feynman", "tikz-feynman/"),
+    ("tikzpingus", "TikZpingus", "tikzpingus/"),
     ("tkz-euclide", "tkz-euclide", "tkz-euclide/"),
     ("wheelchart", "wheelchart", "wheelchart/"),
 ]

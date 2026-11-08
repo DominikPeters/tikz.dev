@@ -1,0 +1,48 @@
+<section id="pingu-editor" aria-labelledby="pingu-editor-title" data-nosnippet>
+  <div class="editor-intro">
+    <h2 class="home-contents-title" id="pingu-editor-title">Build a pingu</h2>
+    <p>Pick a body, pose, face and outfit, then copy the TikZ code or download the drawing.</p>
+  </div>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <div class="editor-frame">
+    <div class="editor-toolbar">
+      <div class="heading-actions">
+        <div class="history" role="group" aria-label="History">
+          <button id="undo" class="icon-button" title="Undo (⌘Z)" aria-label="Undo" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 5 3.5 9l4 4M4 9h8a4.5 4.5 0 0 1 0 9h-2"/></svg></button>
+          <button id="redo" class="icon-button" title="Redo (⇧⌘Z)" aria-label="Redo" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 5 4 4-4 4M16 9H8a4.5 4.5 0 0 0 0 9h2"/></svg></button>
+        </div>
+        <button id="reset" class="quiet" disabled>Reset</button>
+      </div>
+      <div class="stage-actions">
+        <button id="favorite" class="quiet favorite-toggle" aria-pressed="false" title="Save to favorites"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16.5s-6.5-3.9-6.5-8.6A3.4 3.4 0 0 1 10 6a3.4 3.4 0 0 1 6.5 1.9c0 4.7-6.5 8.6-6.5 8.6Z"/></svg><span class="favorite-label">Save</span></button>
+        <button id="shuffle" class="quiet" disabled><span class="dice" aria-hidden="true">🎲</span> Randomize</button>
+        <button id="share" class="quiet" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8.5 11.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1M11.5 8.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"/></svg> <span class="share-label">Copy link</span></button>
+      </div>
+      <div class="download-actions" role="group" aria-label="Download">
+        <button class="secondary" id="png" aria-label="Download PNG" disabled>PNG</button>
+        <button class="primary" id="svg" aria-label="Download SVG" disabled><span class="download-long">Download SVG</span><span class="download-short" aria-hidden="true">SVG</span><span aria-hidden="true">↓</span></button>
+      </div>
+    </div>
+    <div class="workspace" id="workspace" aria-busy="true">
+      <section class="drawing-column" aria-label="Penguin preview and export">
+        <div class="stage-card">
+          <div class="stage"><div class="preview" id="preview" title="Boop!"><p class="loading">Loading preview…</p></div></div>
+          <div class="presets" id="presets" role="group" aria-label="Presets"></div>
+        </div>
+        <section class="favorites" id="favorites" aria-labelledby="favorites-title" hidden><h3 id="favorites-title">Favorites <span id="favorite-count">0</span></h3><ul class="favorite-list" id="favorite-list"></ul></section>
+        <section class="code-card" aria-labelledby="code-title"><div class="code-toolbar"><h3 id="code-title">TikZ code</h3><div><label class="document-toggle"><input type="checkbox" id="document" class="switch"> Full document</label><button class="quiet" id="copy" disabled>Copy code</button></div></div><pre tabindex="0" aria-label="Generated TikZ code"><code id="code">\pingu</code></pre></section>
+      </section>
+      <aside class="controls-card" aria-label="Customize penguin">
+        <div class="tabs" role="tablist" aria-label="Customization">
+          <button role="tab" id="tab-body" aria-controls="panel-body" aria-selected="false" tabindex="-1">Body</button>
+          <button role="tab" id="tab-pose" aria-controls="panel-pose" aria-selected="true" tabindex="0">Pose</button>
+          <button role="tab" id="tab-face" aria-controls="panel-face" aria-selected="false" tabindex="-1">Face</button>
+          <button role="tab" id="tab-style" aria-controls="panel-style" aria-selected="false" tabindex="-1">Style</button>
+          <button role="tab" id="tab-colors" aria-controls="panel-colors" aria-selected="false" tabindex="-1">Colors</button>
+        </div>
+        <div class="panels" id="panels"><p class="loading">Loading drawing parts…</p></div>
+      </aside>
+    </div>
+  </div>
+  <noscript><p>Enable JavaScript to use the editor. See <a href="usage">Usage</a> for TeX examples.</p></noscript>
+</section>

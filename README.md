@@ -11,6 +11,7 @@ PGF/TikZ and related packages:
 | tikz-cd | [/tikz-cd/](https://tikz.dev/tikz-cd/) | [astoff/tikz-cd](https://github.com/astoff/tikz-cd) |
 | pgf-pie | [/pgf-pie/](https://tikz.dev/pgf-pie/) | [pgf-tikz/pgf-pie](https://github.com/pgf-tikz/pgf-pie) |
 | TikZ-Feynman | [/tikz-feynman/](https://tikz.dev/tikz-feynman/) | [JP-Ellis/tikz-feynman](https://github.com/JP-Ellis/tikz-feynman) |
+| TikZpingus | [/tikzpingus/](https://tikz.dev/tikzpingus/) | [EagleoutIce/tikzpingus](https://github.com/EagleoutIce/tikzpingus) |
 | wheelchart | [/wheelchart/](https://tikz.dev/wheelchart/) | [CTAN](https://ctan.org/pkg/wheelchart) |
 | pgfgantt | [/pgfgantt/](https://tikz.dev/pgfgantt/) | [skafdasschaf/latex-pgfgantt](https://github.com/skafdasschaf/latex-pgfgantt) |
 | tkz-euclide | [/tkz-euclide/](https://tikz.dev/tkz-euclide/) | [CTAN](https://ctan.org/pkg/tkz-euclide) |
@@ -31,7 +32,7 @@ postprocessed using a Python script to add the header, menu, and other features 
 A self-contained version of this pipeline is available at https://github.com/DominikPeters/tikz.dev-style/.
 * **Python converters**: Other manuals are converted to HTML using custom Python converters that
 parse the LaTeX source and generate HTML. There were written by Claude (Opus 5.5) and are used for 
-tikz-cd, TikZ-Feynman, pgfgantt, tkz-euclide, chemfig, forest, and nicematrix.
+tikz-cd, TikZ-Feynman, pgfgantt, tkz-euclide, chemfig, forest, nicematrix, and TikZpingus.
 
 The builds are run in a GitHub Action. We also use actions to automatically and regularly check for changes
 to the upstream manuals. When a change causes the build to fail, the action opens an issue in this repository.

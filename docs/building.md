@@ -82,7 +82,7 @@ scopes send one query, requesting ten groups with up to two hits per group.
 The production crawler configuration is kept in `scripts/algolia-crawler.js`
 and published through the Algolia crawler editor. Retain the editor's existing
 crawler API key when copying it; the repository contains only a placeholder.
-The crawler starts at the twelve manuals' root URLs and excludes `/monorepo/`
+The crawler starts at the manuals' root URLs and excludes `/monorepo/`
 and the independent tools on the domain. It assigns each record its manual's
 tag and a `search_group`: the enclosing `h6` anchor, falling back to `h5`,
 `h4`, or the page URL. Definition entries retain their own result links while

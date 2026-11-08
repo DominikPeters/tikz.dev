@@ -1418,6 +1418,40 @@ nav.sidetoc .sidetoccontents a.tocsubsubsection {
 .pkg-chemfig { --pkg-color: #202838; }
 .pkg-forest { --pkg-color: #2f5d34; }
 .pkg-nicematrix { --pkg-color: #24539c; }
+.pkg-tikzpingus { --pkg-color: #246182; }
+
+.pkg-tikzpingus .bodyandsidetoc > header { background: var(--pkg-color); }
+.pkg-tikzpingus .pingu-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.pkg-tikzpingus .pingu-gallery > a { display: block; border-radius: 5px; padding: .5rem; }
+.pkg-tikzpingus .pingu-gallery > a:hover { background: #edf4f8; }
+.pkg-tikzpingus .pingu-gallery figure { margin: 0; text-align: center; }
+.pkg-tikzpingus .pingu-gallery img { width: auto; height: 125px; max-width: 100%; object-fit: contain; }
+.pkg-tikzpingus .pingu-gallery figcaption { margin-top: .6rem; font-size: .85em; }
+.pkg-tikzpingus .pingu-requires, .pkg-tikzpingus .pingu-alias { font-size: .9em; color: #555; }
+.pkg-tikzpingus .pingu-source-map { list-style: none; padding: 0; font-size: .85em; }
+.pkg-tikzpingus .pingu-lines { color: #666; font-variant-numeric: tabular-nums; }
+.pkg-tikzpingus .pingu-colors { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; }
+.pkg-tikzpingus .pingu-colors li { flex: 1 1 12rem; }
+.pkg-tikzpingus .pingu-colors small { display: block; color: #666; }
+.pkg-tikzpingus .pingu-swatch { display: inline-block; width: .8em; height: .8em; border: 1px solid #999; border-radius: 50%; margin-right: .4em; }
+.pkg-tikzpingus .pingu-key-index { columns: 2 18rem; list-style: none; padding: 0; }
+.pkg-tikzpingus .pingu-key-index li { break-inside: avoid; margin-bottom: .3rem; }
+.pkg-tikzpingus .manualentry { margin: 1.5em 0; }
+.pkg-tikzpingus .entryheadline { margin-left: 0; }
+.pkg-tikzpingus .entryheadline p { gap: .7em; flex-wrap: wrap; align-items: baseline; padding-right: 1em; }
+.pkg-tikzpingus .entryheadline p > a.anchor-link { position: absolute; right: 0; top: 0; }
+.pkg-tikzpingus .entryheadline .hl-def { margin-right: 0; }
+.pkg-tikzpingus .entryheadline .hl-def,
+.pkg-tikzpingus .entryheadline .hl-default { min-width: 0; overflow-wrap: anywhere; }
+.pkg-tikzpingus .entrybody { margin-left: 1rem; }
+.pkg-tikzpingus .textbody a { overflow-wrap: anywhere; }
+.pkg-tikzpingus .example-image { flex: 0 1 auto; min-width: 0; max-width: 100%; box-sizing: border-box; padding: .5rem; }
+.pkg-tikzpingus .example-code { flex: 1 1 18rem; min-width: 0; }
 
 .manual-title-block.home-box {
   margin-top: 0.75rem;

@@ -1,0 +1,6 @@
+# Package code and documentation are built from the same pinned revision.
+repo=https://github.com/EagleoutIce/tikzpingus.git
+commit=cb7000ca88bfce10f3e654c719f365ec3791ab31
+watch=doc/tikzpingus-doc.tex tex/tikzpingus.sty
+docdir=doc
+sitepath=/tikzpingus/

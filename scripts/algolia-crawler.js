@@ -11,6 +11,7 @@ new Crawler({
     "https://tikz.dev/tikz-cd/", "https://tikz.dev/pgf-pie/", "https://tikz.dev/tikz-feynman/",
     "https://tikz.dev/wheelchart/", "https://tikz.dev/pgfgantt/", "https://tikz.dev/tkz-euclide/",
     "https://tikz.dev/chemfig/", "https://tikz.dev/forest/", "https://tikz.dev/nicematrix/",
+    "https://tikz.dev/tikzpingus/",
   ],
   sitemaps: [],
   ignoreCanonicalTo: false,
@@ -31,6 +32,7 @@ new Crawler({
         wheelchart: ["wheelchart", "wheelchart"], pgfgantt: ["pgfgantt", "pgfgantt"],
         "tkz-euclide": ["tkz-euclide", "tkz-euclide"], chemfig: ["chemfig", "chemfig"],
         forest: ["forest", "forest"], nicematrix: ["nicematrix", "nicematrix"],
+        tikzpingus: ["tikzpingus", "TikZpingus"],
       };
       const path = url.pathname.split("/").filter(Boolean);
       // Only root-level PGF pages and the known package directories are manuals.

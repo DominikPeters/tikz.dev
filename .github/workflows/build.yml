@@ -5,7 +5,7 @@ name: build
 on:
   push:
     branches: [master]
-    paths: [pgf/**, pgfplots/**, tcolorbox/**, tikz-cd/**, pgf-pie/**, tikz-feynman/**, wheelchart/**, pgfgantt/**, tkz-euclide/**, chemfig/**, forest/**, nicematrix/**, shared/**, scripts/**, .github/workflows/build*.yml]
+    paths: [pgf/**, pgfplots/**, tcolorbox/**, tikz-cd/**, pgf-pie/**, tikz-feynman/**, wheelchart/**, pgfgantt/**, tkz-euclide/**, chemfig/**, forest/**, nicematrix/**, tikzpingus/**, shared/**, scripts/**, .github/workflows/build*.yml]
   workflow_dispatch:
     inputs:
       package:

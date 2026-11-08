@@ -85,7 +85,10 @@ assert.equal(extract("<section class='textbody'><h1>Home</h1><p>Welcome</p></sec
   "https://tikz.dev/forest/");
 assert.equal(config.initialIndexSettings.tikz.attributeForDistinct, "search_group");
 assert.equal(config.initialIndexSettings.tikz.distinct, 2);
-assert.equal(config.startUrls.length, 12);
+assert.equal(config.startUrls.length, 13);
+assert.ok(config.startUrls.includes("https://tikz.dev/tikzpingus/"));
+assert.equal(extract(fixture, "/tikzpingus/ref-cup").records[0].manual, "tikzpingus");
+assert.equal(extract(fixture, "/tikzpingus/ref-cup").records[0].tags[0], "tikzpingus");
 
 const symbolFixture = `<section class="textbody"><h4 id="page">Paths</h4><h5 id="lines">Lines</h5>
   <div class="entryheadline"><li><p><a id="pgf.--"></a><span class="hl-def">
