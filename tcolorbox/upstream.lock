@@ -1,7 +1,7 @@
 # Upstream sources of this manual. "commit" is the last upstream commit that
 # built successfully; it is advanced automatically by .github/workflows/upstream.yml.
 repo=https://github.com/T-F-S/tcolorbox.git
-commit=a357488091d6b59aba009b4a9e742b69592c9a57
+commit=b6ecf18d12d5c4829dea7ff1c7cba161f484a94a
 watch=doc/latex/tcolorbox tex/latex/tcolorbox
 docdir=doc/latex/tcolorbox
 sitepath=/tcolorbox/
