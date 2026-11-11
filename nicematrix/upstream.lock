@@ -1,7 +1,7 @@
 # Upstream sources of this manual. "commit" is the last upstream commit that
 # built successfully; it is advanced automatically by .github/workflows/upstream.yml.
 repo=https://github.com/fpantigny/nicematrix.git
-commit=bcf2df019de517bf41fff01e885ca788a1d1bbc9
+commit=e342b73c1ba36cdfc4a1bae140443577a5f19c38
 watch=nicematrix.tex nicematrix-code.dtx nicematrix.ins
 docdir=.
 sitepath=/nicematrix/
